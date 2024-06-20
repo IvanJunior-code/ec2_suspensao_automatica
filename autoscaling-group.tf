@@ -13,4 +13,10 @@ resource "aws_autoscaling_group" "autoscaling_ec2" {
 
   depends_on = [aws_launch_template.launch_template]
 
+  tag {
+    key                 = "Name"
+    value               = "Auto Scaling Group"
+    propagate_at_launch = true
+  }
+
 }
