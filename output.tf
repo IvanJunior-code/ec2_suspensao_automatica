@@ -3,7 +3,7 @@ output "connection" {
 }
 
 output "instance_ips" {
-  value = join("\n", [for ip in data.aws_instances.ec2.public_ips : replace(ip, ".", "-")])
+  value     = join("\n", [for ip in data.aws_instances.ec2.public_ips : replace(ip, ".", "-")])
   sensitive = false
 }
 
